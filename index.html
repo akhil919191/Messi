@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Messi Goal ⚽</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#061b3a,#008cff);color:#fff;min-height:100vh;display:flex;justify-content:center;align-items:center}
+.box{width:90%;max-width:420px;background:rgba(255,255,255,.15);padding:30px 20px;border-radius:25px;box-shadow:0 10px 30px rgba(0,0,0,.3);text-align:center;backdrop-filter:blur(8px)}
+h1{font-size:30px}input{width:100%;padding:14px;margin:9px 0;border:0;border-radius:12px;font-size:16px}button{width:100%;padding:15px;margin-top:15px;border:0;border-radius:15px;background:#ffd700;color:#111;font-size:18px;font-weight:bold;cursor:pointer}.ball{font-size:85px;animation:kick 1.5s infinite alternate}
+@keyframes kick{from{transform:translateX(-20px) rotate(-10deg)}to{transform:translateX(20px) rotate(10deg)}}#goal{display:none}
+</style>
+</head>
+<body>
+<div class="box" id="form">
+<h1>⚽ Messi Goal ⚽</h1>
+<p>കളി തുടങ്ങാൻ വിവരങ്ങൾ നൽകുക</p>
+<input type="text" id="name" placeholder="നിങ്ങളുടെ പേര്">
+<input type="number" id="age" placeholder="വയസ്സ്">
+<button onclick="continueGame()">Continue ▶</button>
+</div>
+<div class="box" id="goal">
+<div class="ball">⚽</div>
+<h1 id="welcome"></h1>
+<h2>മെസ്സിക്ക് ഒരു ഗോൾ! 🐐🔥</h2>
+<button onclick="goal()">GOAL ⚽🥅</button>
+<p id="result"></p>
+</div>
+<script>
+function continueGame(){
+ const name=document.getElementById("name").value.trim(), age=document.getElementById("age").value.trim();
+ if(!name||!age){alert("പേര്, വയസ്സ് എന്നിവ നൽകുക");return;}
+ document.getElementById("form").style.display="none";
+ document.getElementById("goal").style.display="block";
+ document.getElementById("welcome").textContent="Welcome "+name+" 👋";
+}
+function goal(){
+ document.getElementById("result").innerHTML="GOOOOOOOAL!!! ⚽🔥🔥🔥<br>മെസ്സി സ്കോർ ചെയ്തു! 🐐🇦🇷";
+}
+</script>
+</body>
+</html>
