@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Messi Game Prank</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f5f5f5;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0}
+.card{background:#fff;padding:28px;border-radius:20px;box-shadow:0 5px 25px #0002;width:min(90%,380px);text-align:center}
+input,button{box-sizing:border-box;width:100%;padding:14px;margin-top:12px;border-radius:12px;font-size:16px}
+input{border:1px solid #ccc}button{border:0;background:#111;color:white;font-weight:bold;cursor:pointer}
+#result{display:none}.emoji{font-size:55px}
+</style>
+</head>
+<body>
+<div class="card" id="form">
+<h2>⚽ Play with Messi</h2>
+<p>Enter your name and age to continue.</p>
+<form id="gameForm">
+<input id="name" placeholder="പേര്" maxlength="40" required>
+<input id="age" type="number" min="1" max="120" placeholder="വയസ്" required>
+<button type="submit">Continue ⚽</button>
+</form>
+</div>
+
+<div class="card" id="result">
+<div class="emoji">😂</div>
+<h1>പറ്റിച്ചേ!</h1>
+<p>Messi-യോടൊപ്പം കളിക്കാമെന്ന് വിചാരിച്ചോ? 😄⚽</p>
+<button onclick="location.reload()">വീണ്ടും കളിക്കാം</button>
+</div>
+
+<script>
+document.getElementById("gameForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ document.getElementById("form").style.display="none";
+ document.getElementById("result").style.display="block";
+});
+</script>
+</body>
+</html>
